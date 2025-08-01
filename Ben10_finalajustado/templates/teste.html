@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Gaming Mat Company - Arena de Batalha</title>
+    <link rel="stylesheet" href="../static/styles/teste.css">
+</head>
+<body>
+    <div class="gaming-mat">
+        <!-- Aviso de início -->
+        <div class="time-warning" id="timeWarning">
+            <h1>JOGADOR 1 COMEÇA!</h1>
+            <p>Preparando a batalha...</p>
+        </div>
+
+        <!-- Cronômetro -->
+        <div class="round-timer" id="roundTimer" style="display: none;">
+            TEMPO: <span id="timeDisplay">30</span>s
+        </div>
+
+        <!-- Oponente -->
+        <div class="player-zone top" id="player2">
+            
+            <div class="card-row">
+                <div class="card-slot"></div>
+                <div class="card-slot"></div>
+                <div class="card-slot"></div>
+                <div class="card-slot"></div>
+                <div class="card-slot"></div>
+                <div class="card-slot"></div>
+            </div>
+        </div>
+
+        <div class="batalha">
+            <div class="batalha-container">
+                <!-- Carta do oponente -->
+                <div class="card-select carta-oponente">
+                    <div class="player-name">Oponente</div>
+                    <div class="health-bar">
+                        <div class="health-fill" id="health2"></div>
+                    </div>
+                    <div class="damage-effect" id="damageEffect1" style="display: none;">-0</div>
+                    <p style="color:white;">Vida: <span id="healthValue2">100</span>/100</p>
+                    <div class="actions-container" id="actions2">
+                        <button class="action-btn attack-btn" id="attackBtn1">ATACAR</button>
+                        <button class="action-btn attack-btn" id="attackBtn3">ATACAR 2</button>
+                        <button class="action-btn dodge-btn" id="dodgeBtn2">DESVIAR</button>
+                    </div>
+                </div>
+        
+                <!-- Sua carta -->
+                <div class="card-select sua-carta">
+                    <div class="player-name">Você</div>
+                    <div class="health-bar">
+                        <div class="health-fill" id="health1"></div>
+                    </div>
+                    <div class="damage-effect" id="damageEffect1" style="display: none;">-0</div>
+                    <p style="color:white;">Vida: <span id="healthValue1">100</span>/100</p>
+                    <div class="actions-container" id="actions1">
+                        <button class="action-btn attack-btn" id="attackBtn2">ATACAR</button>
+                        <button class="action-btn attack-btn" id="attackBtn4">ATACAR 2</button>
+                        <button class="action-btn dodge-btn" id="dodgeBtn1">DESVIAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Jogador -->
+        <div class="player-zone bottom" id="player1">
+            
+            <div class="card-row">
+                <div class="card-slot"></div>
+                <div class="card-slot"></div>
+                <div class="card-slot"></div>
+                <div class="card-slot"></div>
+                <div class="card-slot"></div>
+            </div>
+            
+            <div class="botoes-container">
+                <a href="#" class="trocar">Trocar</a>
+                <a href="#" class="ver-cartas">Ver Cartas</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../static/scripts/teste.js"></script>
+</body>
+</html>

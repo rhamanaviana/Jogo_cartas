@@ -1,0 +1,257 @@
+/* Estilos gerais */
+body {
+    background-color: #111;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Garamond', serif;
+    overflow-y: hidden;
+}
+ 
+:root {
+    --cor-primaria: #00ff9d;
+    --card-width: 240px;
+    --card-height: 340px;
+    --card-img-height: 160px;
+    --cards-visible: 3;
+    --card-gap: 30px;
+}
+ 
+.volta {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    background: rgba(0, 255, 157, 0.1);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px var(--cor-primaria);
+    border: 1px solid var(--cor-primaria);
+    font-size: 0.9rem;
+}
+ 
+.volta:hover {
+    background: var(--cor-primaria);
+    color: black;
+    box-shadow: 0 0 20px var(--cor-primaria), 0 0 35px rgba(0, 255, 157, 0.6);
+    transform: translateY(-2px);
+}
+ 
+/* Container do carrossel */
+.carrossel-container {
+    position: relative;
+    max-width: 100%;
+    margin: 100px auto;
+    padding: 10px 60px;
+}
+ 
+/* Área rolável do carrossel */
+.carrossel {
+    display: flex;
+    gap: 70px;
+    transition: transform 0.5s ease;
+    padding: 20px 0;
+    width: 100%;
+}
+ 
+/* Container de cada carta */
+.carta-container {
+    flex: 0 0 300px; /* Largura fixa para cada carta */
+    scroll-snap-align: start;
+}
+ 
+/* Botões de navegação fixos no canto */
+.carrossel-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 255, 157, 0.5); /* Cor do fundo */
+    color: white; /* Cor do texto */
+    border: none;
+    width: 50px; /* Tamanho dos botões */
+    height: 50px; /* Tamanho dos botões */
+    border-radius: 50%; /* Deixar redondo */
+    font-size: 24px; /* Tamanho da fonte */
+    cursor: pointer;
+    z-index: 10; /* Garantir que os botões fiquem acima do conteúdo */
+    transition: all 0.3s ease; /* Transição suave para hover */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.7); /* Efeito de sombra */
+}
+ 
+/* Efeito de hover para os botões */
+.carrossel-btn:hover {
+    background: rgba(0, 255, 157, 0.8); /* Cor do fundo ao passar o mouse */
+    transform: translateY(-50%) scale(1.1); /* Aumenta o botão ao passar o mouse */
+}
+ 
+/* Botão "prev" no canto esquerdo */
+.prev {
+    left: 20px; /* Distância da borda esquerda */
+}
+ 
+/* Botão "next" no canto direito */
+.next {
+    right: 20px; /* Distância da borda direita */
+}
+ 
+/* Responsividade: reduz o tamanho dos botões em telas menores */
+@media (max-width: 768px) {
+    .carrossel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px; /* Diminui o tamanho da fonte */
+    }
+}
+ 
+/* Estilos base das cartas */
+.card, .card_xlr8, .card_alienX, .card_Aquatico,
+.card_Fantasmatico, .card_Gosma, .card_Qbracos,
+.card_Cromatico, .card_Massa, .card_Ultra-T,
+.card_Eco, .card_Choque, .card_Fogo,
+.card_Feedback {
+    width: 300px;
+    height: 430px;
+    background-image: url('../assets/fundo.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0, 255, 157, 0.7);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s;
+}
+ 
+.carta-container:hover .card,
+.carta-container:hover .card_xlr8,
+.carta-container:hover .card_alienX {
+    transform: translateY(-10px);
+    box-shadow: 0 0 35px rgba(0, 255, 157, 0.9);
+}
+ 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.title, .title_xlr8, .title_AlienX, .title_Aquatico,
+.title_Fantasmatico, .title_Gosma, .title_Qbracos,
+.title_Cromatico, .title_Massa, .title_Ultra-T,
+.title_Eco, .title_Choque, .title_Fogo,
+.title_Feedback {
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 0 0 5px rgba(0, 255, 157, 0.7);
+}
+ 
+.ps, .ps_xlr8, .ps_AlienX, .ps_Aquatico,
+.ps_Fantasmatico, .ps_Gosma, .ps_Qbracos,
+.ps_Cromatico, .ps_Massa, .ps_Ultra-T,
+.ps_Eco, .ps_Choque, .ps_Fogo,
+.ps_Feedback {
+    font-size: 25px;
+    color: #00FF9D;
+}
+ 
+.img, .img_xlr8, .img_AlienX, .img_Aquatico,
+.img_Fantasmatico, .img_Gosma, .img_Qbracos,
+.img_Cromatico, .img_Massa, .img_Ultra-T,
+.img_Eco, .img_Choque, .img_Fogo,
+.img_Feedback {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50%;
+    justify-content: center;
+}
+ 
+.img img, .img_xlr8 img, .img_AlienX img, .img_Aquatico img,
+.img_Fantasmatico img, .img_Gosma img, .img_Qbracos img,
+.img_Cromatico img, .img_Massa img, .img_Ultra-T img,
+.img_Eco img, .img_Choque img, .img_Fogo img,
+.img_Feedback img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: -30px; /* Alterado de -50px para -30px */
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 157, 0.5));
+}
+ 
+.img_Choque img, .img_Qbracos img, .img_Ultra-T img {
+    margin-top: -10px; /* Alterado de 02px para -10px */
+}
+ 
+.abilities, .abilities_xlr8, .abilities_AlienX, .abilities_Aquatico,
+.abilities_Fantasmatico, .abilities_Gosma, .abilities_Qbracos,
+.abilities_Cromatico, .abilities_Massa, .abilities_Ultra-T,
+.abilities_Eco, .abilities_Choque, .abilities_Fogo,
+.abilities_Feedback {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-top: -25px;
+}
+ 
+.ability-title, .ability-title_xlr8, .ability-title_AlienX, .ability-title-Aquatico,
+.ability-title-Fantasmatico, .ability-title-Gosma, .ability-title-Qbracos,
+.ability-title-Cromatico, .ability-title-Massa, .ability-title-Ultra-T,
+.ability-title-Eco, .ability-title-Choque, .ability-title-Fogo,
+.ability-title-Feedback {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #00FF9D;
+}
+ 
+a {
+    position: absolute;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 8px 16px;
+    border: 2px solid #00FF9D;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+ 
+a:hover {
+    background-color: #00FF9D;
+    color: #000;
+}
+ 
+.texto-carta {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 157, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+    width: 95%;  /* Largura aumentada */
+    height: 150px;
+    margin-top: -30px;
+    margin-left: auto;  /* Novas propriedades */
+    margin-right: auto;
+    display: block;
+    position: relative;
+}
+ 
+/* Se precisar de ajuste fino na posição horizontal */
+.abilities, .abilities_xlr8, .abilities_AlienX /* [todas as outras variações] */ {
+    display: flex;
+    justify-content: center;  /* Centraliza o conteúdo */
+    padding: 10px 5px;  /* Reduz o padding lateral */
+}
+.texto-carta p {
+    margin-top: 2px;
+    margin-bottom: 6px;
+    line-height: 1.4;
+    font-size: 14,5px;
+    padding: 0 5px;  /* Adicionei um pequeno padding horizontal */
+}

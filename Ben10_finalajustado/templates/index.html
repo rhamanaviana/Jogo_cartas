@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben10 Game Online</title>
+    <link rel="stylesheet" href="/static/styles/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="led-strip led-top"></div>
+        <div class="led-strip led-right"></div>
+        <div class="led-strip led-bottom"></div>
+        <div class="led-strip led-left"></div>
+    </div>
+   
+    <main class="container">
+        <div class="buttons-container">
+            <button class="game-btn offline">
+                <a href="/escolher-cartas" class="botao-jogar">JOGAR</a>
+                <span class="btn-border btn-border-top"></span>
+                <span class="btn-border btn-border-right"></span>
+                <span class="btn-border btn-border-bottom"></span>
+                <span class="btn-border btn-border-left"></span>
+            </button>
+        </div>
+    </main>
+<!-- Elementos originais mantidos -->
+<a class="opcoes" id="settingsButton">Settings</a>
+ 
+<video class="video" autoplay muted loop>
+<source src="{{ url_for('static', filename='media/background.mp4') }}" type="video/mp4">
+</video>
+ 
+<audio id="audio" loop>
+<source src="/static/assets/musica.mp3" type="audio/mp3">
+</audio>
+ 
+<div id="settings" class="settings">
+<h2>Configurações</h2>
+<button id="playPauseButton">🔈</button>
+<br><br>
+<button id="closeSettings">Fechar</button>
+</div>
+ 
+<script src="../static/scripts/script.js"></script>
+    <div class="scanlines"></div>
+</body>
+</html>

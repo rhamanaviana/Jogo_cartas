@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben10 - Jogo de Cartas</title>
+    <link rel="stylesheet" href="../static/styles/jogo.css">
+</head>
+<body>
+    <div class="gaming-mat">
+        <div class="mat-design"></div>
+
+        <!-- Área do Oponente -->
+        <div class="player-zone top">
+            <div class="player-name">OPONENTE</div>
+            <div class="card-row">
+                <div class="card-slot opponent"></div>
+                <div class="card-slot opponent"></div>
+                <div class="card-slot opponent"></div>
+                <div class="card-slot opponent"></div>
+                <div class="card-slot opponent"></div>
+            </div>
+        </div>
+
+        <!-- Área de Batalha Central -->
+        <div class="batalha">
+            <div class="card-select"></div>
+
+            <!-- Imagem Central Decorativa -->
+            <div class="omnitrix-symbol">
+                <img src="../static/assets/ben10.png" alt="Omnitrix Symbol">
+            </div>
+
+            <div class="card-select"></div>
+        </div>
+
+        <!-- Área do Jogador -->
+        <div class="player-zone bottom">
+            <div class="player-name">JOGADOR</div>
+            <div class="card-row" id="player-cards">
+                <div class="card-slot player"></div>
+                <div class="card-slot player"></div>
+                <div class="card-slot player"></div>
+                <div class="card-slot player"></div>
+                <div class="card-slot player"></div>
+            </div>
+            <div class="botoes-container">
+                <a href="#" class="trocar" id="trocarCartaBtn">Trocar</a>
+            </div>
+        </div>
+
+        <!-- Cronômetro SVG -->
+        <div class="cronometro-redondo">
+            <svg id="cronometro-svg" viewBox="0 0 100 100">
+                <circle id="cronometro-fundo" cx="50" cy="50" r="45"></circle>
+                <circle id="cronometro-progresso" cx="50" cy="50" r="45"
+                    stroke-dasharray="283" stroke-dashoffset="0"></circle>
+            </svg>
+            <div id="cronometro-texto">30</div>
+        </div>
+
+        <!-- Aviso de turno -->
+        <div id="timeWarning" style="display: none;">
+            <h1>TURNO DO JOGADOR 1</h1>
+            <p>Tempo por turno: 30s</p>
+        </div>
+    </div>
+
+    <script src="../static/scripts/jogo.js"></script>
+</body>
+</html>

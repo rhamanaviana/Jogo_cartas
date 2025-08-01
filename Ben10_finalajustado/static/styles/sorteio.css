@@ -1,0 +1,76 @@
+body {
+    background: linear-gradient(120deg, #00ff00, #004d00, #000000);
+    font-family: "Poppins", Arial, sans-serif;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: white;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    background-color: #00ff00;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 255, 0, 0.5);
+}
+
+button:hover {
+    background-color: #009900;
+    color: white;
+    box-shadow: 2px 2px 15px rgba(0, 255, 0, 0.8);
+}
+
+.hidden {
+    display: none;
+}
+
+#moedaContainer {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#moedaImg {
+    transition: transform 1s ease-in-out;
+}
+
+a {
+    display: inline-block; 
+    background-color: #00ff00;
+    color: black;
+    text-decoration: none; 
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 255, 0, 0.5);
+}
+
+a:hover {
+    background-color: #009900;
+    color: white;
+    box-shadow: 2px 2px 15px rgba(0, 255, 0, 0.8);
+}

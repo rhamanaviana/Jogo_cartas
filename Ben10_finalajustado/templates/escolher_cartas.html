@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben 10 - Escolha suas cartas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../static/styles/escolher_carta.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="Voltar">Voltar</a>
+        <h1>Escolha as suas cartas <span id="contador-selecao">0/5</span> <a href="/cartas" class="ver-cartas">Ver cartas</a> <a href="/predefinicoes" class="ver-cartas"> Decks Predefinidos</a></h1>
+    </header>
+
+    <div class="personagens-container">
+        <!-- Linha 1 -->
+        <div class="linha-personagens">
+            <div class="personagem" data-nome="Fantasmático">
+                <img src="../static/perfil/fantasmatico (2).jpg" alt="Fantasmático">
+                <p>Fantasmático</p>
+            </div>
+            <div class="personagem" data-nome="XLR8">
+                <img src="../static/perfil/xlr8.jpg" alt="XLR8">
+                <p>XLR8</p>
+            </div>
+            <div class="personagem" data-nome="Gosma">
+                <img src="../static/perfil/gosma.jpg" alt="Gosma">
+                <p>Gosma</p>
+            </div>
+            <div class="personagem" data-nome="Quatro Braços">
+                <img src="/static/assets/quatrobraços.png" alt="Quatro Braços">
+                <p>Quatro Braços</p>
+            </div>
+            <div class="personagem" data-nome="Alien X">
+                <img src="../static/perfil/alienx.png" alt="Alien X">
+                <p>Alien X</p>
+            </div>
+            <div class="personagem" data-nome="Aquático">
+                <img src="../static/perfil/aquatico.png" alt="Aquático">
+                <p>Aquático</p>
+            </div>
+        </div>
+
+        <!-- Linha 2 -->
+        <div class="linha-personagens">
+            <div class="personagem" data-nome="Tarta Gira">
+                <img src="../static/perfil/tarta gira.jpg" alt="Tarta Gira">
+                <p>Tanta Gira</p>
+            </div>
+            <div class="personagem" data-nome="Macaco Aranha">
+                <img src="../static/perfil/macacoaranha.jpg" alt="Macaco Aranha">
+                <p>Macaco Aranha</p>
+            </div>
+            <div class="personagem" data-nome="Cromático">
+                <img src="../static/perfil/cromatico.png" alt="Cromático">
+                <p>Cromático</p>
+            </div>
+            <div class="personagem" data-nome="insectóide">
+                <img src="../static/perfil/INSECTOIDE (1).png" alt="insectóide">
+                <p>insectóide</p>
+            </div>
+            <div class="personagem" data-nome="Feedback">
+                <img src="../static/perfil/feedback.jpeg" alt="Feedback">
+                <p>Feedback</p>
+            </div>
+            <div class="personagem" data-nome="Friagem">
+                <img src="../static/perfil/friagem.jpg" alt="Friagem">
+                <p>Friagem</p>
+            </div>
+        </div>
+
+        <!-- Linha 3 -->
+        <div class="linha-personagens">
+            <div class="personagem" data-nome="Choque Squad">
+                <img src="../static/perfil/chock squat.jpg" alt="Choque Squad">
+                <p>Choque Squad</p>
+            </div>
+            <div class="personagem" data-nome="Uthra T">
+                <img src="../static/perfil/ultrat.jpg" alt="Uthra T">
+                <p>Uthra T</p>
+            </div>
+            <div class="personagem" data-nome="Cipó Selvagem">
+                <img src="/static/assets/cipoo.png" alt="Cipó Selvagem">
+                <p>Cipó Selvagem</p>
+            </div>
+            <div class="personagem" data-nome="Éco Éco">
+                <img src="../static/perfil/eco.jpg" alt="Éco Éco">
+                <p>Éco Éco</p>
+            </div>
+            <div class="personagem" data-nome="Massa Cinzenta">
+                <img src="../static/perfil/massacinzenta.jpg" alt="Massa Cinzenta">
+                <p>Massa Cinzenta</p>
+            </div>
+        </div>
+    </div>
+
+    <button id="confirmar-selecao" disabled>Confirmar Seleção</button>
+
+    <div id="mensagem-erro" class="mensagem-erro" style="display: none;"></div>
+
+    <script src="../static/scripts/escolher_cartas.js"></script>
+</body>
+</html>

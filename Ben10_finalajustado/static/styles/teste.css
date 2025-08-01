@@ -1,0 +1,304 @@
+/* Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #08a341, #3db669, #000000);
+}
+
+/* Layout Principal */
+.gaming-mat {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Zonas dos Jogadores */
+.player-zone {
+    flex: 1;
+    margin: 5px;
+    background-color: black;
+    opacity: 0.6;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+    min-height: 30%;
+}
+
+.player-zone.top {
+    margin-top: -190px;
+    margin-bottom: 80px;
+}
+
+.player-zone.bottom {
+    margin-top: 90px;
+    margin-bottom: -20px;
+}
+
+/* Elementos dos Jogadores */
+.player-name {
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2vw;
+    margin: 10px 0 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+/* Barra de Vida */
+.health-bar {
+    height: 25px;
+    width: 60%;
+    background: #333;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.health-fill {
+    height: 100%;
+    width: 100%;
+    background: #4CAF50;
+    transition: width 0.3s;
+}
+
+/* Cartas */
+.card-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+    z-index: 2;
+}
+
+.card-slot {
+    width: 12vw;
+    height: 15vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.card-slot:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-select {
+    width: 18vw;
+    height: 25vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-left: 180px;
+    margin-right: 180px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s;
+
+}
+
+.carta-oponente{
+    left: 200px;
+}
+/* Botões de Ação */
+.actions-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: all 0.2s;
+}
+
+.attack-btn {
+    background-color: #e53935;
+}
+
+.dodge-btn {
+    background-color: #1e88e5;
+}
+
+.action-btn:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+/* Botões Adicionais */
+.botoes-container {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+}
+
+.trocar, .ver-cartas {
+    text-decoration: none;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: 2px solid #08a341;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-family: 'Luckiest Guy', cursive;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.ver-cartas {
+    margin-bottom: 48px;
+}
+
+.trocar:hover, .ver-cartas:hover {
+    background-color: #08a341;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #08a341;
+}
+
+/* Cronômetro */
+.round-timer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    z-index: 10;
+    color: white;
+}
+
+.timer-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#timer {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px #08a341, 0 0 20px #08a341;
+    font-family: 'Luckiest Guy', cursive;
+    margin-bottom: 5px;
+}
+
+.turn-indicator {
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px #08a341;
+    background-color: rgba(8, 163, 65, 0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    animation: pulse 2s infinite;
+}
+
+/* Avisos e Efeitos */
+.time-warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.damage-effect, .dodge-effect {
+    position: absolute;
+    font-weight: bold;
+    animation: fadeUp 1s forwards;
+    z-index: 99;
+}
+
+.damage-effect {
+    color: red;
+    font-size: 2rem;
+}
+
+.dodge-effect {
+    color: cyan;
+    font-size: 1.5rem;
+}
+
+.warning {
+    color: #ff0000;
+    animation: pulse 0.5s infinite alternate;
+}
+
+.timer-warning {
+    color: #ff5555 !important;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000 !important;
+    animation: shake 0.5s infinite;
+}
+
+
+.batalha-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.card-select {
+    width: 18vw;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.card-select:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,378 @@
+/* Reset e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+}
+
+/* Estilo principal do jogo */
+.gaming-mat {
+    max-width: 1600px;
+    max-height: 1000px;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 4px solid #00FF00;
+    box-shadow: 0 0 15px #00FF00, inset 0 0 10px #00FF00;
+    margin: 0 auto;
+}
+
+/* Áreas de jogador */
+.player-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    border: 2px solid #00FF00;
+    background-color: #000;
+    height: 35%;
+}
+
+.player-zone.top {
+    border-bottom: none;
+}
+
+.player-zone.bottom {
+    border-top: none;
+    padding-bottom: 60px;
+}
+
+/* Linhas diagonais */
+.player-zone::before,
+.player-zone::after {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 2px;
+    background-color: #00FF00;
+    z-index: 0;
+}
+
+.player-zone.top::before { transform: rotate(45deg); left: 0; bottom: 0; transform-origin: bottom left; }
+.player-zone.top::after { transform: rotate(-45deg); right: 0; bottom: 0; transform-origin: bottom right; }
+.player-zone.bottom::before { transform: rotate(-45deg); left: 0; top: 0; transform-origin: top left; }
+.player-zone.bottom::after { transform: rotate(45deg); right: 0; top: 0; transform-origin: top right; }
+
+/* Rótulos de jogador e oponente */
+.player-name {
+    color: #00FF00;
+    text-align: center;
+    margin: 8px 0;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00FF00;
+}
+
+/* Linha de cartas */
+.card-row {
+    max-width: 95%;
+    height: auto;
+    gap: 20px;
+    min-height: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transform: scale(1);
+    transform-origin: center center;
+    transition: transform 0.2s ease;
+    margin: 0 auto;
+}
+
+/* Slots de cartas e Cartas no Banco/Geral */
+.card-slot, .card {
+    width: 120px; /* AUMENTADO */
+    height: 190px; /* DIMINUÍDO */
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 2px solid #00FF00;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 0 7px #00FF00;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#player-cards .card:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 0 15px #00FF00;
+}
+
+/* Ajustes específicos para as cartas dentro do banco do jogador */
+#player-cards .card {
+    cursor: pointer;
+}
+
+/* Símbolo do Omnitrix no centro */
+.omnitrix-symbol {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 30px;
+    box-shadow: 0 0 15px #00FF00;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.omnitrix-symbol img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    filter: brightness(1.2) hue-rotate(60deg);
+}
+
+/* Área de batalha central */
+.batalha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    z-index: 2;
+    height: 30%;
+    width: 100%;
+    padding: 15px 0;
+}
+
+/* Slots onde as cartas de batalha entram */
+.batalha .card-select {
+    width: 140px; /* AUMENTADO */
+    height: 210px; /* DIMINUÍDO */
+    border: 2px dashed #00FF00;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 255, 0, 0.1);
+    flex-shrink: 0;
+}
+
+/* Carta na batalha (quando colocada no card-select) */
+.carta-batalha {
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    border: 3px solid #FFD700;
+    box-shadow: 0 0 12px #FFD700;
+}
+
+/* Botões de ação */
+.botoes-container {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10;
+}
+
+.botao-acao, .trocar, .ver-cartas {
+    text-decoration: none;
+    background-color: #000;
+    color: #00FF00;
+    padding: 12px 24px;
+    border: 2px solid #00FF00;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    min-width: 140px;
+    box-shadow: 0 0 8px #00FF00;
+}
+
+.botao-acao:hover, .trocar:hover, .ver-cartas:hover {
+    background-color: #00FF00;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00FF00;
+}
+
+/* Cronômetro */
+.cronometro-redondo {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 100px;
+    height: 100px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00FF00;
+}
+
+#cronometro-svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+#cronometro-fundo { fill: transparent; stroke: rgba(0, 0, 0, 0.5); stroke-width: 8; }
+#cronometro-progresso { fill: transparent; stroke: #00FF00; stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 1s linear; }
+#cronometro-texto { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #00FF00; font-size: 1.8rem; font-weight: bold; text-shadow: 0 0 5px #00FF00; }
+
+/* Estilos das cartas (conteúdo interno - ajustado para novo tamanho) */
+.card .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 6px;
+    background-color: rgba(0, 255, 0, 0.2);
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #00FF00;
+    flex-shrink: 0;
+}
+
+.card .title {
+    color: #00FF00;
+    font-weight: bold;
+    font-size: 0.6rem;
+    text-shadow: 0 0 3px #00FF00;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 5px;
+}
+
+.card .ps {
+    color: #00FF00;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-left: 5px;
+    font-size: 0.7rem;
+}
+
+.card img {
+    width: 90%;
+    height: 55%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 5px;
+    flex-grow: 1;
+}
+
+/* Barra de vida */
+.vida-container {
+    width: 90%;
+    height: 14px;
+    background-color: #222;
+    border-radius: 7px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #00FF00;
+    box-shadow: 0 0 4px rgba(0, 255, 0, 0.5);
+    flex-shrink: 0;
+}
+
+.vida-barra {
+    height: 100%;
+    background-color: #00FF00;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease-out, background-color 0.5s ease-out;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.vida-texto {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    line-height: 14px;
+    z-index: 5;
+}
+
+/* Ataques nas cartas */
+.carta-batalha .ataques-container {
+    display: flex !important;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px;
+    width: 95%;
+    align-items: stretch;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px; 
+    border: 1px solid #00FF00;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 45%;
+    overflow-y: auto;
+    z-index: 20;
+}
+
+.carta-batalha .botao-ataque {
+    background-color: #000;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 0 0 4px rgba(0, 255, 0, 0.5);
+    font-weight: bold;
+}
+
+.carta-batalha .botao-ataque:hover:not(:disabled) {
+    background-color: #00FF00;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 6px #00FF00;
+}
+
+.carta-batalha .botao-ataque:disabled {
+    background-color: #222;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.7;
+    border-color: #444;
+}
+
+.card:not(.carta-batalha) .ataques-container {
+    display: none;
+}

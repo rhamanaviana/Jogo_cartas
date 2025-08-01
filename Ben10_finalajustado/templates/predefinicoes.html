@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decks Predefinidos</title>
+    <link rel="stylesheet" href="../static/styles/predefinicoes.css">
+</head>
+<body>
+    <!-- Adicionado botão voltar para escolher cartas -->
+    <a href="/escolher-cartas" class="volta">Voltar</a>
+
+    <!-- Removidos links desnecessários -->
+    <!-- <a href="/deck1"></a> -->
+    <!-- <a href="/deck2"></a> -->
+    <!-- <a href="/deck3"></a> -->
+    <!-- <a href="/deck4"></a> -->
+    <!-- <a href="/deck5"></a> -->
+
+    <!-- Botão Pronto agora será controlado pelo JavaScript -->
+    <button class="botao-pronto">Pronto</button>
+
+    <div class="container">
+        <div class="header">
+            <h1>Escolha seu Deck Predefinido</h1>
+        </div>
+
+        <div class="deck-selector">
+            <!-- Os botões agora chamam a função showDeck via event listener no JS -->
+            <button class="deck-btn" data-deck-index="1">Velocidade Relâmpago</button>
+            <button class="deck-btn" data-deck-index="2">Força Alienígena</button>
+            <button class="deck-btn" data-deck-index="3">Equilíbrio Tático</button>
+            <button class="deck-btn" data-deck-index="4">Defesa Impenetrável</button>
+            <button class="deck-btn" data-deck-index="5">Estratégia Suprema</button>
+        </div>
+
+        <!-- Deck 1 - Velocidade Relâmpago -->
+        <div id="deck1" class="deck-container">
+            <div class="deck-header">
+                <h2 class="deck-title">Velocidade Relâmpago</h2>
+            </div>
+            <div class="deck-stats">
+                <!-- Stats -->
+                 <div class="stat-item">
+                    <div class="stat-label">Ataque</div>
+                    <div class="stat-value average">Médio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Defesa</div>
+                    <div class="stat-value bad">Ruim</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Velocidade</div>
+                    <div class="stat-value good">Muito Bom</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Dificuldade</div>
+                    <div class="stat-value average">Médio</div>
+                </div>
+            </div>
+            <div class="deck-cards-container">
+                <button class="carrossel-btn prev">&#10094;</button>
+                <div class="deck-cards" data-deck-name="Velocidade Relâmpago">
+                    <!-- Cards serão carregados pelo JS -->
+                </div>
+                <button class="carrossel-btn next">&#10095;</button>
+            </div>
+            <!-- Outras seções do deck -->
+        </div>
+
+        <!-- Deck 2 - Força Alienígena -->
+        <div id="deck2" class="deck-container">
+             <div class="deck-header">
+                <h2 class="deck-title">Força Alienígena</h2>
+            </div>
+             <div class="deck-stats">
+                 <!-- Stats -->
+                 <div class="stat-item">
+                    <div class="stat-label">Ataque</div>
+                    <div class="stat-value good">Muito Bom</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Defesa</div>
+                    <div class="stat-value good">Bom</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Velocidade</div>
+                    <div class="stat-value bad">Ruim</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Dificuldade</div>
+                    <div class="stat-value average">Médio</div>
+                </div>
+            </div>
+            <div class="deck-cards-container">
+                <button class="carrossel-btn prev">&#10094;</button>
+                <div class="deck-cards" data-deck-name="Força Alienígena">
+                    <!-- Cards serão carregados pelo JS -->
+                </div>
+                <button class="carrossel-btn next">&#10095;</button>
+            </div>
+            <!-- Outras seções do deck -->
+        </div>
+
+        <!-- Deck 3 - Equilíbrio Tático -->
+        <div id="deck3" class="deck-container">
+             <div class="deck-header">
+                <h2 class="deck-title">Equilíbrio Tático</h2>
+            </div>
+             <div class="deck-stats">
+                <!-- Stats -->
+                <div class="stat-item">
+                    <div class="stat-label">Ataque</div>
+                    <div class="stat-value good">Bom</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Defesa</div>
+                    <div class="stat-value good">Bom</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Velocidade</div>
+                    <div class="stat-value good">Bom</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Dificuldade</div>
+                    <div class="stat-value average">Fácil</div>
+                </div>
+            </div>
+            <div class="deck-cards-container">
+                <button class="carrossel-btn prev">&#10094;</button>
+                <div class="deck-cards" data-deck-name="Equilíbrio Tático">
+                    <!-- Cards serão carregados pelo JS -->
+                </div>
+                <button class="carrossel-btn next">&#10095;</button>
+            </div>
+            <!-- Outras seções do deck -->
+        </div>
+
+        <!-- Deck 4 - Defesa Impenetrável -->
+        <div id="deck4" class="deck-container">
+             <div class="deck-header">
+                <h2 class="deck-title">Defesa Impenetrável</h2>
+            </div>
+             <div class="deck-stats">
+                <!-- Stats -->
+                 <div class="stat-item">
+                    <div class="stat-label">Ataque</div>
+                    <div class="stat-value bad">Ruim</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Defesa</div>
+                    <div class="stat-value good">Muito Bom</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Velocidade</div>
+                    <div class="stat-value average">Médio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Dificuldade</div>
+                    <div class="stat-value average">Difícil</div>
+                </div>
+            </div>
+            <div class="deck-cards-container">
+                <button class="carrossel-btn prev">&#10094;</button>
+                <div class="deck-cards" data-deck-name="Defesa Impenetrável">
+                    <!-- Cards serão carregados pelo JS -->
+                </div>
+                <button class="carrossel-btn next">&#10095;</button>
+            </div>
+            <!-- Outras seções do deck -->
+        </div>
+
+        <!-- Deck 5 - Estratégia Suprema -->
+        <div id="deck5" class="deck-container">
+             <div class="deck-header">
+                <h2 class="deck-title">Estratégia Suprema</h2>
+            </div>
+             <div class="deck-stats">
+                <!-- Stats -->
+                <div class="stat-item">
+                    <div class="stat-label">Ataque</div>
+                    <div class="stat-value average">Médio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Defesa</div>
+                    <div class="stat-value average">Médio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Velocidade</div>
+                    <div class="stat-value average">Médio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Dificuldade</div>
+                    <div class="stat-value average">Muito Difícil</div>
+                </div>
+            </div>
+            <div class="deck-cards-container">
+                <button class="carrossel-btn prev">&#10094;</button>
+                <div class="deck-cards" data-deck-name="Estratégia Suprema">
+                    <!-- Cards serão carregados pelo JS -->
+                </div>
+                <button class="carrossel-btn next">&#10095;</button>
+            </div>
+            <!-- Outras seções do deck -->
+        </div>
+
+    </div>
+
+    <!-- Incluir o script que define os decks predefinidos -->
+    <script src="../static/scripts/decks.js"></script>
+    <!-- Incluir o script com os dados das cartas -->
+    <script src="../static/scripts/cartas_data.js"></script>
+    <!-- Incluir o script que define as cartas (carrossel, se houver) -->
+    <script src="../static/scripts/cartas.js"></script>
+    <!-- Incluir o script da página -->
+    <script src="../static/scripts/predefinicoes.js"></script>
+</body>
+</html>
+
